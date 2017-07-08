@@ -1,9 +1,7 @@
 package com.blog.service;
 
+import com.blog.base.BasicService;
 import com.blog.domain.User;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
@@ -12,8 +10,5 @@ import java.util.List;
  */
 public interface UserService extends BasicService<User, String> {
 
-    List<User> findAll(Sort sort);
-
-    Page<User> findAll(Pageable pageable);
-
+    List<User> findAlls();
 }

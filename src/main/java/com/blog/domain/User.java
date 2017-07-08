@@ -1,5 +1,6 @@
 package com.blog.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
@@ -20,21 +21,16 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(length = 32)
     String id;
 
-    @Column(length = 50)
     String account;
 
-    @Column(length = 16)
+    @JsonIgnore
     String password;
 
-    @Column(length = 200)
     String name;
 
-    @Column(length = 10)
     Integer age;
 
-    @Column(length = 1)
     String sex;
 }
