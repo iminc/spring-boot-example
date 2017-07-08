@@ -1,4 +1,5 @@
 .gradle
+out/
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 
@@ -23,3 +24,5 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+将删除 src/main/java/com/blog/repository/impl/
+将删除 src/test/resources/
