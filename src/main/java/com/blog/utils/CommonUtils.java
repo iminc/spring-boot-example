@@ -7,10 +7,10 @@ import java.util.UUID;
  */
 
 /**
- * CommonUtil
+ * CommonUtils
  */
 
-public class CommonUtil {
+public class CommonUtils {
 
     /**
      * Produce one UUID string

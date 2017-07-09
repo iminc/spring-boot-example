@@ -20,21 +20,22 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    @Autowired UserService userService;
 
-    @RequestMapping("{name}")
-    String user(@PathVariable String name) {
-        return String.format("hello word %s.", name);
-    }
-
-    @RequestMapping("")
+    @RequestMapping("/")
     String home() {
         System.out.println(Strings.isNullOrEmpty("123"));
         return "hello word.";
     }
 
-    @RequestMapping("test")
+    @RequestMapping("/{id}")
+    String user(@PathVariable("id") User user) {
+        System.out.println(user);
+        System.out.println(userService.findAlls());
+        return String.format("hello word %s.", user.getName());
+    }
+
+    @RequestMapping("/test")
     List<User> test() throws IOException {
         User user = new User();
         user.setAccount("ifzm");

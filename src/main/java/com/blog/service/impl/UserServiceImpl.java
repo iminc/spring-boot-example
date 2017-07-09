@@ -1,7 +1,7 @@
 package com.blog.service.impl;
 
-import com.blog.base.BasicRepository;
 import com.blog.base.AbstractBasicService;
+import com.blog.base.BasicRepository;
 import com.blog.domain.User;
 import com.blog.repository.UserRepository;
 import com.blog.service.UserService;
@@ -19,8 +19,7 @@ import java.util.List;
 @Transactional
 public class UserServiceImpl extends AbstractBasicService<User, String> implements UserService {
 
-    @Autowired
-    private UserRepository userRepository;
+    @Autowired UserRepository userRepository;
 
     @Override
     public BasicRepository<User, String> registryRepository() {
@@ -29,6 +28,6 @@ public class UserServiceImpl extends AbstractBasicService<User, String> implemen
 
     @Override
     public List<User> findAlls() {
-        return userRepository.findAlls();
+        return userRepository.findAll();
     }
 }
