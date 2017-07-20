@@ -36,8 +36,11 @@ dependencies {
     runtime('mysql:mysql-connector-java')
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile("org.springframework.boot:spring-boot-devtools")
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-security')
     compile('com.google.guava:guava:22.0')
     compile('com.alibaba:fastjson:1.2.34')
+    compile('io.jsonwebtoken:jjwt:0.7.0')
 }

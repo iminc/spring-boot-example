@@ -8,6 +8,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by jim on 17-7-6.
@@ -23,14 +25,18 @@ public class User implements Serializable {
     @GenericGenerator(name = "uuid", strategy = "org.hibernate.id.UUIDGenerator")
     String id;
 
-    String account;
+    @Column(unique = true)
+    String username;
 
     @JsonIgnore
     String password;
 
-    String name;
+    String email;
 
-    Integer age;
+    @Temporal(TemporalType.TIMESTAMP)
+    Date lastPasswordResetDate;
 
-    String sex;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "SYSTEM_USER_ROLE", joinColumns = {@JoinColumn(name = "USER_ID")}, inverseJoinColumns = {@JoinColumn(name = "ROLE_ID")})
+    List<Role> roles;
 }

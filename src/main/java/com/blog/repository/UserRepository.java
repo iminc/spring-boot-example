@@ -8,4 +8,5 @@ import com.blog.domain.User;
  */
 public interface UserRepository extends BasicRepository<User, String> {
 
+	User findByUsername(String username);
 }
