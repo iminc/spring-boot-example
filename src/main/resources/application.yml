@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8090
   tomcat:
     uri-encoding: UTF-8
 
@@ -17,11 +17,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-  devtools:
-    remote:
-      secret: this is a secret
-  mvc:
-    throw-exception-if-no-handler-found: true
 logging:
   level:
     org.springframework:
