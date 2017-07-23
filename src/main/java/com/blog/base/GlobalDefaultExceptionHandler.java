@@ -16,9 +16,8 @@ public class GlobalDefaultExceptionHandler {
 	@ResponseBody
 	public Object defaultErrorHandler(HttpServletRequest req, HttpServletResponse res , Exception e)  {
 		Map<String, Object> result = new HashMap<>();
-		result.put("message", e.getLocalizedMessage());
+		result.put("code", 1001);
 		result.put("error", e.getMessage());
-		result.put("status", res.getStatus());
 		return result;
 	}
 }
